@@ -12,121 +12,127 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
             line-height: 1.6;
-            color: #f5f5f5;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-            position: relative;
-        }
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 193, 7, 0.15) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
+            color: #ffffff;
+            background: #000000;
+            min-height: 100vh;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
-            position: relative;
-            z-index: 1;
         }
         
         header {
             text-align: center;
-            padding: 60px 20px;
-            color: #ffc107;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #000000 0%, #1a1a00 50%, #000000 100%);
+            border-bottom: 5px solid #FFD700;
             animation: fadeIn 1s ease-in;
         }
         
         h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 0 0 30px rgba(255, 193, 7, 0.3);
-            animation: slideDown 1s ease-out;
-            color: #ffc107;
+            font-size: 4.5em;
+            margin-bottom: 30px;
+            font-weight: 900;
+            color: #FFD700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700, 3px 3px 0px #000;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700, 3px 3px 0px #000;
+            }
+            to {
+                text-shadow: 0 0 30px #FFD700, 0 0 60px #FFD700, 0 0 80px #FFA500, 3px 3px 0px #000;
+            }
         }
         
         .tagline {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-            opacity: 0.95;
-            color: #ffeb3b;
+            font-size: 2em;
+            margin-bottom: 40px;
+            font-weight: bold;
+            color: #FFA500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         .hero-text {
-            font-size: 1.2em;
-            max-width: 800px;
+            font-size: 1.4em;
+            max-width: 900px;
             margin: 0 auto;
-            background: rgba(255, 193, 7, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 193, 7, 0.3);
-            color: #fff;
+            background: #FFD700;
+            color: #000000;
+            padding: 30px;
+            border-radius: 15px;
+            font-weight: bold;
+            box-shadow: 0 0 30px #FFD700;
+            border: 3px solid #FFA500;
         }
         
         .content-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            margin: 30px 0;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255, 193, 7, 0.1);
+            background: #1a1a00;
+            margin: 40px 0;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
             animation: fadeInUp 0.8s ease-out;
-            border: 1px solid rgba(255, 193, 7, 0.2);
+            border: 4px solid #FFD700;
         }
         
         h2 {
-            color: #ffc107;
-            font-size: 2.2em;
-            margin-bottom: 25px;
-            border-bottom: 3px solid #ffc107;
-            padding-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+            color: #FFD700;
+            font-size: 3em;
+            margin-bottom: 30px;
+            border-bottom: 5px solid #FFD700;
+            padding-bottom: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0px #000;
         }
         
         .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
         
         .solution-card {
-            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-            padding: 30px;
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid #ffc107;
-            border: 1px solid rgba(255, 193, 7, 0.2);
+            background: #000000;
+            padding: 35px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 4px solid #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
         
         .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(255, 193, 7, 0.3);
-            border: 1px solid rgba(255, 193, 7, 0.5);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 40px #FFD700, 0 0 60px #FFA500;
+            border-color: #FFA500;
         }
         
         .solution-card h3 {
-            color: #ffc107;
-            font-size: 1.5em;
-            margin-bottom: 15px;
+            color: #FFD700;
+            font-size: 1.8em;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
+            font-weight: 900;
+            text-transform: uppercase;
         }
         
         .icon {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-right: 15px;
+            filter: drop-shadow(0 0 10px #FFD700);
         }
         
         .solution-card ul {
@@ -135,83 +141,122 @@
         }
         
         .solution-card li {
-            padding: 10px 0;
-            padding-left: 25px;
+            padding: 12px 0;
+            padding-left: 35px;
             position: relative;
-            color: #e0e0e0;
+            color: #ffffff;
+            font-size: 1.1em;
+            font-weight: bold;
         }
         
         .solution-card li:before {
-            content: "✓";
+            content: "⚡";
             position: absolute;
             left: 0;
-            color: #ffc107;
+            color: #FFD700;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.5em;
         }
         
         .emergency-section {
-            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
-            color: #1a1a1a;
-            padding: 40px;
-            border-radius: 15px;
-            margin: 30px 0;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000000;
+            padding: 50px;
+            border-radius: 20px;
+            margin: 40px 0;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+            box-shadow: 0 0 50px #FFD700;
+            border: 5px solid #FFA500;
         }
         
         .emergency-section h2 {
-            color: #1a1a1a;
-            border-bottom: 3px solid #1a1a1a;
+            color: #000000;
+            border-bottom: 5px solid #000000;
             text-shadow: none;
         }
         
         .emergency-section p {
-            color: #1a1a1a;
+            color: #000000;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .emergency-box {
+            text-align: left;
+            max-width: 700px;
+            margin: 30px auto 0;
+            background: #000000;
+            color: #FFD700;
+            padding: 35px;
+            border-radius: 15px;
+            border: 4px solid #FFD700;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .emergency-box p {
+            color: #FFD700;
+            margin: 15px 0;
         }
         
         .quick-tips {
-            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-            border-left: 5px solid #ffc107;
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 193, 7, 0.3);
+            background: #000000;
+            border: 4px solid #FFD700;
+            padding: 35px;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
         }
         
         .quick-tips h3 {
-            color: #ffc107;
-            margin-bottom: 15px;
+            color: #FFD700;
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-weight: 900;
+            text-transform: uppercase;
         }
         
         .quick-tips li {
-            color: #e0e0e0;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.1em;
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
-            color: #1a1a1a;
-            padding: 15px 40px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000000;
+            padding: 20px 50px;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 1.2em;
-            margin: 20px 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
-            font-weight: bold;
+            font-size: 1.5em;
+            margin: 20px 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px #FFD700;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: 3px solid #FFA500;
         }
         
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.6);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 50px #FFD700, 0 0 70px #FFA500;
         }
         
         footer {
             text-align: center;
-            padding: 30px;
-            color: #ffc107;
-            margin-top: 50px;
+            padding: 50px;
+            color: #FFD700;
+            margin-top: 60px;
+            background: #000000;
+            border-top: 5px solid #FFD700;
+        }
+        
+        footer h3 {
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
         
         @keyframes fadeIn {
@@ -219,9 +264,9 @@
             to { opacity: 1; }
         }
         
-        @keyframes slideDown {
+        @keyframes fadeInUp {
             from {
-                transform: translateY(-50px);
+                transform: translateY(50px);
                 opacity: 0;
             }
             to {
@@ -230,20 +275,17 @@
             }
         }
         
-        @keyframes fadeInUp {
-            from {
-                transform: translateY(30px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        p {
+            font-weight: 600;
         }
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5em;
+                font-size: 2.8em;
+            }
+            
+            h2 {
+                font-size: 2em;
             }
             
             .solutions-grid {
@@ -251,7 +293,7 @@
             }
             
             .content-section {
-                padding: 25px;
+                padding: 30px;
             }
         }
     </style>
@@ -259,7 +301,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>🌟 DON'T STRESS OUT 🌟</h1>
+            <h1>⚡ DON'T STRESS OUT ⚡</h1>
             <p class="tagline">Life is Beautiful When Your Mind is Peaceful</p>
             <div class="hero-text">
                 <p>What should you do when you're stressed? Here you'll find all the practical solutions you need. Your mental health is in your hands!</p>
@@ -270,16 +312,16 @@
     <div class="container">
         <div class="content-section">
             <h2>🧘 What is Stress?</h2>
-            <p style="font-size: 1.1em; line-height: 1.8;">
+            <p style="font-size: 1.2em; line-height: 1.9;">
                 Stress is a natural response of our body and mind to challenging situations. Work pressure, family problems, financial difficulties, or personal challenges - all of these can cause stress. But the good news is, we can manage it!
             </p>
         </div>
 
         <div class="emergency-section">
-            <h2>⚡ Need Immediate Relief?</h2>
-            <p style="font-size: 1.2em; margin: 20px 0;">Feeling stressed right now? Try this 5-minute technique:</p>
-            <div style="text-align: left; max-width: 600px; margin: 0 auto; background: rgba(0,0,0,0.2); padding: 25px; border-radius: 10px;">
-                <p><strong>4-7-8 Breathing Method:</strong></p>
+            <h2>⚡ NEED IMMEDIATE RELIEF?</h2>
+            <p style="font-size: 1.3em; margin: 25px 0;">Feeling stressed right now? Try this 5-minute technique:</p>
+            <div class="emergency-box">
+                <p><strong>4-7-8 BREATHING METHOD:</strong></p>
                 <p>1️⃣ Breathe in through your nose for 4 seconds</p>
                 <p>2️⃣ Hold your breath for 7 seconds</p>
                 <p>3️⃣ Exhale through your mouth for 8 seconds</p>
@@ -288,7 +330,7 @@
         </div>
 
         <div class="content-section">
-            <h2>💡 Practical Solutions</h2>
+            <h2>💡 PRACTICAL SOLUTIONS</h2>
             
             <div class="solutions-grid">
                 <div class="solution-card">
@@ -426,25 +468,25 @@
         </div>
 
         <div class="quick-tips">
-            <h3>⚡ Quick Tips - Do Anywhere, Anytime</h3>
+            <h3>⚡ QUICK TIPS - DO ANYWHERE, ANYTIME</h3>
             <ul style="list-style: none; padding: 0;">
-                <li style="padding: 8px 0;">🌊 <strong>5-Minute Break:</strong> Close your eyes and take deep breaths</li>
-                <li style="padding: 8px 0;">🎵 <strong>Music Therapy:</strong> Listen to your favorite songs</li>
-                <li style="padding: 8px 0;">☕ <strong>Tea Break:</strong> Relax with herbal tea</li>
-                <li style="padding: 8px 0;">🚶 <strong>Walking Break:</strong> Walk for 10 minutes</li>
-                <li style="padding: 8px 0;">😊 <strong>Smile Therapy:</strong> Look in the mirror and smile</li>
-                <li style="padding: 8px 0;">💧 <strong>Water Therapy:</strong> Drink cold water or wash your face</li>
-                <li style="padding: 8px 0;">🤗 <strong>Self Hug:</strong> Give yourself a hug</li>
-                <li style="padding: 8px 0;">📞 <strong>Call a Friend:</strong> Phone a friend</li>
+                <li style="padding: 10px 0;">🌊 <strong>5-Minute Break:</strong> Close your eyes and take deep breaths</li>
+                <li style="padding: 10px 0;">🎵 <strong>Music Therapy:</strong> Listen to your favorite songs</li>
+                <li style="padding: 10px 0;">☕ <strong>Tea Break:</strong> Relax with herbal tea</li>
+                <li style="padding: 10px 0;">🚶 <strong>Walking Break:</strong> Walk for 10 minutes</li>
+                <li style="padding: 10px 0;">😊 <strong>Smile Therapy:</strong> Look in the mirror and smile</li>
+                <li style="padding: 10px 0;">💧 <strong>Water Therapy:</strong> Drink cold water or wash your face</li>
+                <li style="padding: 10px 0;">🤗 <strong>Self Hug:</strong> Give yourself a hug</li>
+                <li style="padding: 10px 0;">📞 <strong>Call a Friend:</strong> Phone a friend</li>
             </ul>
         </div>
 
         <div class="content-section">
-            <h2>🚨 When to See a Doctor?</h2>
-            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">
+            <h2>🚨 WHEN TO SEE A DOCTOR?</h2>
+            <p style="font-size: 1.2em; line-height: 1.9; margin-bottom: 25px;">
                 Seek medical help immediately if you experience these symptoms:
             </p>
-            <ul style="font-size: 1.1em; line-height: 2; padding-left: 30px; color: #e0e0e0;">
+            <ul style="font-size: 1.2em; line-height: 2.2; padding-left: 40px; color: #ffffff; font-weight: bold;">
                 <li>Constant anxiety or fear</li>
                 <li>Insomnia (inability to sleep)</li>
                 <li>Loss of appetite or overeating</li>
@@ -456,46 +498,46 @@
             </ul>
         </div>
 
-        <div class="content-section" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%); color: #1a1a1a;">
-            <h2 style="color: #1a1a1a; border-bottom-color: #1a1a1a; text-shadow: none;">🌈 Remember</h2>
-            <p style="font-size: 1.3em; text-align: center; line-height: 1.8; color: #1a1a1a; font-weight: 500;">
+        <div class="content-section" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000000; border-color: #FFA500;">
+            <h2 style="color: #000000; border-bottom-color: #000000; text-shadow: none;">🌈 REMEMBER</h2>
+            <p style="font-size: 1.5em; text-align: center; line-height: 2; color: #000000; font-weight: 900;">
                 "Stress is a part of life, but don't let it control your life. 
                 You are strong, you are capable, you can overcome this!"
             </p>
-            <div style="text-align: center; margin-top: 30px;">
-                <p style="font-size: 1.2em; color: #1a1a1a;">💪 You are not alone</p>
-                <p style="font-size: 1.2em; color: #1a1a1a;">🌟 Every day is a new opportunity</p>
-                <p style="font-size: 1.2em; color: #1a1a1a;">❤️ Your mental health matters</p>
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.4em; color: #000000; font-weight: 900;">💪 YOU ARE NOT ALONE</p>
+                <p style="font-size: 1.4em; color: #000000; font-weight: 900;">🌟 EVERY DAY IS A NEW OPPORTUNITY</p>
+                <p style="font-size: 1.4em; color: #000000; font-weight: 900;">❤️ YOUR MENTAL HEALTH MATTERS</p>
             </div>
         </div>
 
         <div class="content-section">
-            <h2>📞 Helpline Numbers</h2>
-            <div style="font-size: 1.1em; line-height: 2;">
+            <h2>📞 HELPLINE NUMBERS</h2>
+            <div style="font-size: 1.3em; line-height: 2.5; font-weight: bold;">
                 <p><strong>🇮🇳 National Mental Health Helpline:</strong> 1800-599-0019</p>
                 <p><strong>📱 Vandrevala Foundation Helpline:</strong> +91-9999666555</p>
                 <p><strong>💚 iCall Psychosocial Helpline:</strong> 9152987821</p>
                 <p><strong>🆘 AASRA:</strong> +91-9820466726</p>
-                <p style="margin-top: 20px; color: #ffc107; font-weight: bold;">
-                    ⚠️ Emergency: 112 (All States)
+                <p style="margin-top: 30px; color: #FFD700; font-weight: 900; font-size: 1.3em;">
+                    ⚠️ EMERGENCY: 112 (ALL STATES)
                 </p>
             </div>
         </div>
 
-        <div style="text-align: center; margin: 50px 0;">
-            <a href="#" class="cta-button">🧘 Start Now</a>
-            <a href="#" class="cta-button">📚 Learn More</a>
+        <div style="text-align: center; margin: 60px 0;">
+            <a href="#" class="cta-button">🧘 START NOW</a>
+            <a href="#" class="cta-button">📚 LEARN MORE</a>
         </div>
     </div>
 
     <footer>
         <div class="container">
-            <h3 style="margin-bottom: 15px;">DON'T STRESS OUT</h3>
-            <p style="font-size: 1.1em;">Your Mental Health, Our Priority</p>
-            <p style="margin-top: 20px; opacity: 0.9;">
+            <h3>DON'T STRESS OUT</h3>
+            <p style="font-size: 1.3em; font-weight: bold;">YOUR MENTAL HEALTH, OUR PRIORITY</p>
+            <p style="margin-top: 25px; font-size: 1.2em; font-weight: bold;">
                 Take one small step every day. Change will definitely come! 🌟
             </p>
-            <p style="margin-top: 30px; font-size: 0.9em;">
+            <p style="margin-top: 35px; font-size: 1em; font-weight: bold;">
                 © 2025 DON'T STRESS OUT. All rights reserved.
             </p>
         </div>
