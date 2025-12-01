@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTTHUDU THEESKOVADDHU - ఒత్తుడు తీసుకోవద్దు</title>
+    <title>DON'T STRESS OUT - Stress Management Solutions</title>
     <style>
         * {
             margin: 0;
@@ -14,61 +14,84 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #f5f5f5;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 193, 7, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
+            z-index: 1;
         }
         
         header {
             text-align: center;
             padding: 60px 20px;
-            color: white;
+            color: #ffc107;
             animation: fadeIn 1s ease-in;
         }
         
         h1 {
             font-size: 3.5em;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8), 0 0 30px rgba(255, 193, 7, 0.3);
             animation: slideDown 1s ease-out;
+            color: #ffc107;
         }
         
         .tagline {
             font-size: 1.5em;
             margin-bottom: 30px;
             opacity: 0.95;
+            color: #ffeb3b;
         }
         
         .hero-text {
             font-size: 1.2em;
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 193, 7, 0.1);
             padding: 20px;
             border-radius: 10px;
             backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 193, 7, 0.3);
+            color: #fff;
         }
         
         .content-section {
-            background: white;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             margin: 30px 0;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255, 193, 7, 0.1);
             animation: fadeInUp 0.8s ease-out;
+            border: 1px solid rgba(255, 193, 7, 0.2);
         }
         
         h2 {
-            color: #667eea;
+            color: #ffc107;
             font-size: 2.2em;
             margin-bottom: 25px;
-            border-bottom: 3px solid #764ba2;
+            border-bottom: 3px solid #ffc107;
             padding-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
         }
         
         .solutions-grid {
@@ -79,20 +102,22 @@
         }
         
         .solution-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
             padding: 30px;
             border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid #667eea;
+            border-left: 5px solid #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.2);
         }
         
         .solution-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 15px 35px rgba(255, 193, 7, 0.3);
+            border: 1px solid rgba(255, 193, 7, 0.5);
         }
         
         .solution-card h3 {
-            color: #764ba2;
+            color: #ffc107;
             font-size: 1.5em;
             margin-bottom: 15px;
             display: flex;
@@ -113,66 +138,79 @@
             padding: 10px 0;
             padding-left: 25px;
             position: relative;
+            color: #e0e0e0;
         }
         
         .solution-card li:before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: #667eea;
+            color: #ffc107;
             font-weight: bold;
             font-size: 1.2em;
         }
         
         .emergency-section {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
+            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+            color: #1a1a1a;
             padding: 40px;
             border-radius: 15px;
             margin: 30px 0;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
         }
         
         .emergency-section h2 {
-            color: white;
-            border-bottom: 3px solid white;
+            color: #1a1a1a;
+            border-bottom: 3px solid #1a1a1a;
+            text-shadow: none;
+        }
+        
+        .emergency-section p {
+            color: #1a1a1a;
         }
         
         .quick-tips {
-            background: #fff3cd;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
             border-left: 5px solid #ffc107;
             padding: 25px;
             margin: 20px 0;
             border-radius: 8px;
+            border: 1px solid rgba(255, 193, 7, 0.3);
         }
         
         .quick-tips h3 {
-            color: #856404;
+            color: #ffc107;
             margin-bottom: 15px;
+        }
+        
+        .quick-tips li {
+            color: #e0e0e0;
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+            color: #1a1a1a;
             padding: 15px 40px;
             text-decoration: none;
             border-radius: 50px;
             font-size: 1.2em;
             margin: 20px 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+            font-weight: bold;
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.6);
         }
         
         footer {
             text-align: center;
             padding: 30px;
-            color: white;
+            color: #ffc107;
             margin-top: 50px;
         }
         
@@ -221,245 +259,244 @@
 <body>
     <header>
         <div class="container">
-            <h1>🌟 OTTHUDU THEESKOVADDHU 🌟</h1>
-            <h1>ఒత్తుడు తీసుకోవద్దు</h1>
-            <p class="tagline">జీవితం అందంగా ఉండాలంటే... మనసు ప్రశాంతంగా ఉండాలి</p>
+            <h1>🌟 DON'T STRESS OUT 🌟</h1>
+            <p class="tagline">Life is Beautiful When Your Mind is Peaceful</p>
             <div class="hero-text">
-                <p>ఒత్తుడి లో ఉన్నప్పుడు మీరు ఏమి చేయాలి? ఇక్కడ మీకు అన్ని ప్రాక్టికల్ పరిష్కారాలు లభిస్తాయి. మీ మానసిక ఆరోగ్యం మీ చేతుల్లో ఉంది!</p>
+                <p>What should you do when you're stressed? Here you'll find all the practical solutions you need. Your mental health is in your hands!</p>
             </div>
         </div>
     </header>
 
     <div class="container">
         <div class="content-section">
-            <h2>🧘 ఒత్తుడు అంటే ఏమిటి?</h2>
+            <h2>🧘 What is Stress?</h2>
             <p style="font-size: 1.1em; line-height: 1.8;">
-                ఒత్తుడు అనేది మన శరీరం మరియు మనసు కష్టమైన పరిస్థితులకు ఇచ్చే సహజ ప్రతిస్పందన. పని ఒత్తిడి, కుటుంబ సమస్యలు, ఆర్థిక ఇబ్బందులు, లేదా వ్యక్తిగత సవాళ్లు - ఇవన్నీ ఒత్తుడికి కారణాలు కావచ్చు. కానీ మంచి విషయం ఏమిటంటే, మనం దీన్ని నిర్వహించగలం!
+                Stress is a natural response of our body and mind to challenging situations. Work pressure, family problems, financial difficulties, or personal challenges - all of these can cause stress. But the good news is, we can manage it!
             </p>
         </div>
 
         <div class="emergency-section">
-            <h2>⚡ తక్షణ ఉపశమనం కావాలా?</h2>
-            <p style="font-size: 1.2em; margin: 20px 0;">ఇప్పుడే ఒత్తుడిలో ఉన్నారా? ఈ 5 నిమిషాల టెక్నిక్ ప్రయత్నించండి:</p>
-            <div style="text-align: left; max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.2); padding: 25px; border-radius: 10px;">
-                <p><strong>4-7-8 శ్వాస విధానం:</strong></p>
-                <p>1️⃣ 4 సెకన్లు ముక్కు ద్వారా లోపలికి శ్వాస తీసుకోండి</p>
-                <p>2️⃣ 7 సెకన్లు శ్వాసను పట్టుకోండి</p>
-                <p>3️⃣ 8 సెకన్లు నోటి ద్వారా బయటకు వదలండి</p>
-                <p>4️⃣ ఈ ప్రక్రియను 4 సార్లు పునరావృతం చేయండి</p>
+            <h2>⚡ Need Immediate Relief?</h2>
+            <p style="font-size: 1.2em; margin: 20px 0;">Feeling stressed right now? Try this 5-minute technique:</p>
+            <div style="text-align: left; max-width: 600px; margin: 0 auto; background: rgba(0,0,0,0.2); padding: 25px; border-radius: 10px;">
+                <p><strong>4-7-8 Breathing Method:</strong></p>
+                <p>1️⃣ Breathe in through your nose for 4 seconds</p>
+                <p>2️⃣ Hold your breath for 7 seconds</p>
+                <p>3️⃣ Exhale through your mouth for 8 seconds</p>
+                <p>4️⃣ Repeat this process 4 times</p>
             </div>
         </div>
 
         <div class="content-section">
-            <h2>💡 ప్రాక్టికల్ పరిష్కారాలు</h2>
+            <h2>💡 Practical Solutions</h2>
             
             <div class="solutions-grid">
                 <div class="solution-card">
-                    <h3><span class="icon">🧘‍♂️</span>ధ్యానం & యోగా</h3>
+                    <h3><span class="icon">🧘‍♂️</span>Meditation & Yoga</h3>
                     <ul>
-                        <li>రోజూ 10-15 నిమిషాలు ధ్యానం చేయండి</li>
-                        <li>సూర్య నమస్కారం ప్రాక్టీస్ చేయండి</li>
-                        <li>ప్రాణాయామం నేర్చుకోండి</li>
-                        <li>యోగా క్లాసులకు చేరండి</li>
-                        <li>గైడెడ్ మెడిటేషన్ యాప్స్ ఉపయోగించండి</li>
+                        <li>Meditate for 10-15 minutes daily</li>
+                        <li>Practice Sun Salutations</li>
+                        <li>Learn Pranayama breathing</li>
+                        <li>Join yoga classes</li>
+                        <li>Use guided meditation apps</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
-                    <h3><span class="icon">🏃‍♂️</span>శారీరక వ్యాయామం</h3>
+                    <h3><span class="icon">🏃‍♂️</span>Physical Exercise</h3>
                     <ul>
-                        <li>రోజూ 30 నిమిషాలు నడవండి</li>
-                        <li>జిమ్ లేదా ఫిట్నెస్ సెంటర్ కు వెళ్ళండి</li>
-                        <li>స్విమ్మింగ్, సైక్లింగ్ ప్రయత్నించండి</li>
-                        <li>డ్యాన్స్ చేయండి - ఇష్టమైన పాటలకు</li>
-                        <li>ఇంట్లోనే వర్కౌట్ చేయండి</li>
+                        <li>Walk for 30 minutes daily</li>
+                        <li>Go to the gym or fitness center</li>
+                        <li>Try swimming or cycling</li>
+                        <li>Dance to your favorite songs</li>
+                        <li>Do home workouts</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
-                    <h3><span class="icon">🍎</span>ఆరోగ్యకరమైన ఆహారం</h3>
+                    <h3><span class="icon">🍎</span>Healthy Diet</h3>
                     <ul>
-                        <li>పండ్లు, కూరగాయలు ఎక్కువగా తినండి</li>
-                        <li>నీరు ఎక్కువగా త్రాగండి (రోజుకు 8-10 గ్లాసులు)</li>
-                        <li>జంక్ ఫుడ్ తగ్గించండి</li>
-                        <li>గ్రీన్ టీ, హెర్బల్ టీ త్రాగండి</li>
-                        <li>సమయానికి భోజనం చేయండి</li>
+                        <li>Eat more fruits and vegetables</li>
+                        <li>Drink plenty of water (8-10 glasses daily)</li>
+                        <li>Reduce junk food intake</li>
+                        <li>Drink green tea or herbal tea</li>
+                        <li>Eat meals on time</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
-                    <h3><span class="icon">😴</span>నాణ్యమైన నిద్ర</h3>
+                    <h3><span class="icon">😴</span>Quality Sleep</h3>
                     <ul>
-                        <li>రోజూ 7-8 గంటలు నిద్రించండి</li>
-                        <li>నిర్ణీత సమయానికి పడుకోండి</li>
-                        <li>పడుకునే ముందు ఫోన్ చూడకండి</li>
-                        <li>బెడ్‌రూమ్ చీకటిగా, చల్లగా ఉంచండి</li>
-                        <li>రిలాక్సింగ్ మ్యూజిక్ వినండి</li>
+                        <li>Sleep 7-8 hours daily</li>
+                        <li>Go to bed at a fixed time</li>
+                        <li>Don't look at your phone before bed</li>
+                        <li>Keep bedroom dark and cool</li>
+                        <li>Listen to relaxing music</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
-                    <h3><span class="icon">👥</span>సామాజిక సంబంధాలు</h3>
+                    <h3><span class="icon">👥</span>Social Connections</h3>
                     <ul>
-                        <li>స్నేహితులతో సమయం గడపండి</li>
-                        <li>కుటుంబ సభ్యులతో మాట్లాడండి</li>
-                        <li>మీ భావాలను షేర్ చేయండి</li>
-                        <li>సపోర్ట్ గ్రూప్స్ లో చేరండి</li>
-                        <li>సామాజిక కార్యక్రమాలలో పాల్గొనండి</li>
+                        <li>Spend time with friends</li>
+                        <li>Talk to family members</li>
+                        <li>Share your feelings</li>
+                        <li>Join support groups</li>
+                        <li>Participate in social activities</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
-                    <h3><span class="icon">🎨</span>హాబీస్ & క్రియేటివిటీ</h3>
+                    <h3><span class="icon">🎨</span>Hobbies & Creativity</h3>
                     <ul>
-                        <li>పెయింటింగ్, డ్రాయింగ్ చేయండి</li>
-                        <li>సంగీతం వినండి లేదా నేర్చుకోండి</li>
-                        <li>పుస్తకాలు చదవండి</li>
-                        <li>గార్డెనింగ్ చేయండి</li>
-                        <li>కుకింగ్ కొత్త వంటకాలు ప్రయత్నించండి</li>
+                        <li>Paint or draw</li>
+                        <li>Listen to or learn music</li>
+                        <li>Read books</li>
+                        <li>Do gardening</li>
+                        <li>Try cooking new recipes</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
-                    <h3><span class="icon">⏰</span>టైం మేనేజ్‌మెంట్</h3>
+                    <h3><span class="icon">⏰</span>Time Management</h3>
                     <ul>
-                        <li>రోజువారీ షెడ్యూల్ తయారు చేయండి</li>
-                        <li>ప్రాధాన్యతలను నిర్ణయించండి</li>
-                        <li>పనులను చిన్న భాగాలుగా విభజించండి</li>
-                        <li>"నో" అనడం నేర్చుకోండి</li>
-                        <li>బ్రేక్స్ తీసుకోండి</li>
+                        <li>Create a daily schedule</li>
+                        <li>Set priorities</li>
+                        <li>Break tasks into smaller parts</li>
+                        <li>Learn to say "no"</li>
+                        <li>Take regular breaks</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
-                    <h3><span class="icon">🌿</span>ప్రకృతితో సమయం</h3>
+                    <h3><span class="icon">🌿</span>Time in Nature</h3>
                     <ul>
-                        <li>పార్కులకు వెళ్ళండి</li>
-                        <li>ట్రెక్కింగ్, హైకింగ్ చేయండి</li>
-                        <li>బీచ్ కు వెళ్ళండి</li>
-                        <li>చెట్ల క్రింద కూర్చోండి</li>
-                        <li>సూర్యోదయం, సూర్యాస్తమయం చూడండి</li>
+                        <li>Visit parks</li>
+                        <li>Go trekking or hiking</li>
+                        <li>Visit the beach</li>
+                        <li>Sit under trees</li>
+                        <li>Watch sunrise and sunset</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
-                    <h3><span class="icon">📱</span>డిజిటల్ డిటాక్స్</h3>
+                    <h3><span class="icon">📱</span>Digital Detox</h3>
                     <ul>
-                        <li>ఫోన్ స్క్రీన్ టైం తగ్గించండి</li>
-                        <li>సోషల్ మీడియా బ్రేక్ తీసుకోండి</li>
-                        <li>నోటిఫికేషన్స్ ఆఫ్ చేయండి</li>
-                        <li>టెక్నాలజీ-ఫ్రీ గంటలు నిర్ణయించండి</li>
-                        <li>ఫోన్ లేకుండా భోజనం చేయండి</li>
+                        <li>Reduce phone screen time</li>
+                        <li>Take social media breaks</li>
+                        <li>Turn off notifications</li>
+                        <li>Set technology-free hours</li>
+                        <li>Eat meals without phone</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
-                    <h3><span class="icon">💆‍♂️</span>రిలాక్సేషన్ టెక్నిక్స్</h3>
+                    <h3><span class="icon">💆‍♂️</span>Relaxation Techniques</h3>
                     <ul>
-                        <li>మసాజ్ తీసుకోండి</li>
-                        <li>వెచ్చని నీటితో స్నానం చేయండి</li>
-                        <li>అరోమాథెరపీ ప్రయత్నించండి</li>
-                        <li>ప్రోగ్రెసివ్ మస్కల్ రిలాక్సేషన్</li>
-                        <li>సౌనా లేదా స్టీమ్ బాత్</li>
+                        <li>Get a massage</li>
+                        <li>Take warm water baths</li>
+                        <li>Try aromatherapy</li>
+                        <li>Progressive muscle relaxation</li>
+                        <li>Sauna or steam bath</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
-                    <h3><span class="icon">📝</span>జర్నలింగ్</h3>
+                    <h3><span class="icon">📝</span>Journaling</h3>
                     <ul>
-                        <li>రోజువారీ డైరీ రాయండి</li>
-                        <li>కృతజ్ఞతా జర్నల్ మెయింటెయిన్ చేయండి</li>
-                        <li>మీ భావాలను వ్రాయండి</li>
-                        <li>లక్ష్యాలను నోట్ చేసుకోండి</li>
-                        <li>పాజిటివ్ అఫర్మేషన్స్ రాయండి</li>
+                        <li>Write a daily diary</li>
+                        <li>Maintain a gratitude journal</li>
+                        <li>Write down your feelings</li>
+                        <li>Note your goals</li>
+                        <li>Write positive affirmations</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
-                    <h3><span class="icon">🧠</span>ప్రొఫెషనల్ హెల్ప్</h3>
+                    <h3><span class="icon">🧠</span>Professional Help</h3>
                     <ul>
-                        <li>సైకాలజిస్ట్ ని సంప్రదించండి</li>
-                        <li>కౌన్సెలింగ్ తీసుకోండి</li>
-                        <li>థెరపీ సెషన్స్ కు వెళ్ళండి</li>
-                        <li>మెంటల్ హెల్త్ హెల్ప్‌లైన్ కాల్ చేయండి</li>
-                        <li>ఆన్‌లైన్ థెరపీ ప్రయత్నించండి</li>
+                        <li>Consult a psychologist</li>
+                        <li>Get counseling</li>
+                        <li>Attend therapy sessions</li>
+                        <li>Call mental health helplines</li>
+                        <li>Try online therapy</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="quick-tips">
-            <h3>⚡ త్వరిత చిట్కాలు - ఎప్పుడైనా ఎక్కడైనా చేయవచ్చు</h3>
+            <h3>⚡ Quick Tips - Do Anywhere, Anytime</h3>
             <ul style="list-style: none; padding: 0;">
-                <li style="padding: 8px 0;">🌊 <strong>5 నిమిషాల బ్రేక్:</strong> కళ్ళు మూసుకుని లోతైన శ్వాసలు తీసుకోండి</li>
-                <li style="padding: 8px 0;">🎵 <strong>మ్యూజిక్ థెరపీ:</strong> మీకు ఇష్టమైన పాటలు వినండి</li>
-                <li style="padding: 8px 0;">☕ <strong>టీ బ్రేక్:</strong> హెర్బల్ టీ తాగుతూ రిలాక్స్ అవ్వండి</li>
-                <li style="padding: 8px 0;">🚶 <strong>వాకింగ్ బ్రేక్:</strong> 10 నిమిషాలు నడవండి</li>
-                <li style="padding: 8px 0;">😊 <strong>స్మైల్ థెరపీ:</strong> అద్దంలో చూసుకుని నవ్వండి</li>
-                <li style="padding: 8px 0;">💧 <strong>వాటర్ థెరపీ:</strong> చల్లని నీళ్ళు త్రాగండి లేదా ముఖం కడుక్కోండి</li>
-                <li style="padding: 8px 0;">🤗 <strong>సెల్ఫ్ హగ్:</strong> మిమ్మల్ని మీరు కౌగిలించుకోండి</li>
-                <li style="padding: 8px 0;">📞 <strong>కాల్ ఎ ఫ్రెండ్:</strong> స్నేహితుడికి ఫోన్ చేయండి</li>
+                <li style="padding: 8px 0;">🌊 <strong>5-Minute Break:</strong> Close your eyes and take deep breaths</li>
+                <li style="padding: 8px 0;">🎵 <strong>Music Therapy:</strong> Listen to your favorite songs</li>
+                <li style="padding: 8px 0;">☕ <strong>Tea Break:</strong> Relax with herbal tea</li>
+                <li style="padding: 8px 0;">🚶 <strong>Walking Break:</strong> Walk for 10 minutes</li>
+                <li style="padding: 8px 0;">😊 <strong>Smile Therapy:</strong> Look in the mirror and smile</li>
+                <li style="padding: 8px 0;">💧 <strong>Water Therapy:</strong> Drink cold water or wash your face</li>
+                <li style="padding: 8px 0;">🤗 <strong>Self Hug:</strong> Give yourself a hug</li>
+                <li style="padding: 8px 0;">📞 <strong>Call a Friend:</strong> Phone a friend</li>
             </ul>
         </div>
 
         <div class="content-section">
-            <h2>🚨 ఎప్పుడు డాక్టర్ ని కలవాలి?</h2>
+            <h2>🚨 When to See a Doctor?</h2>
             <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">
-                ఈ క్రింది లక్షణాలు కనిపిస్తే వెంటనే వైద్య సహాయం తీసుకోండి:
+                Seek medical help immediately if you experience these symptoms:
             </p>
-            <ul style="font-size: 1.1em; line-height: 2; padding-left: 30px;">
-                <li>నిరంతర ఆందోళన లేదా భయం</li>
-                <li>నిద్ర రాకపోవడం (ఇన్సోమ్నియా)</li>
-                <li>ఆకలి లేకపోవడం లేదా అతిగా తినడం</li>
-                <li>ఎప్పుడూ అలసట అనిపించడం</li>
-                <li>తలనొప్పి, శరీర నొప్పులు</li>
-                <li>ఏకాగ్రత లేకపోవడం</li>
-                <li>ఆత్మహత్య ఆలోచనలు</li>
-                <li>పానిక్ అటాక్స్</li>
+            <ul style="font-size: 1.1em; line-height: 2; padding-left: 30px; color: #e0e0e0;">
+                <li>Constant anxiety or fear</li>
+                <li>Insomnia (inability to sleep)</li>
+                <li>Loss of appetite or overeating</li>
+                <li>Constant fatigue</li>
+                <li>Headaches, body aches</li>
+                <li>Lack of concentration</li>
+                <li>Suicidal thoughts</li>
+                <li>Panic attacks</li>
             </ul>
         </div>
 
-        <div class="content-section" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-            <h2 style="color: #333;">🌈 గుర్తుంచుకోండి</h2>
-            <p style="font-size: 1.3em; text-align: center; line-height: 1.8; color: #333; font-weight: 500;">
-                "ఒత్తుడు అనేది జీవితంలో భాగం, కానీ అది మీ జీవితాన్ని నియంత్రించనివ్వకండి. 
-                మీరు బలవంతులు, మీరు సామర్థ్యవంతులు, మీరు దీన్ని అధిగమించగలరు!"
+        <div class="content-section" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%); color: #1a1a1a;">
+            <h2 style="color: #1a1a1a; border-bottom-color: #1a1a1a; text-shadow: none;">🌈 Remember</h2>
+            <p style="font-size: 1.3em; text-align: center; line-height: 1.8; color: #1a1a1a; font-weight: 500;">
+                "Stress is a part of life, but don't let it control your life. 
+                You are strong, you are capable, you can overcome this!"
             </p>
             <div style="text-align: center; margin-top: 30px;">
-                <p style="font-size: 1.2em; color: #333;">💪 మీరు ఒంటరి కాదు</p>
-                <p style="font-size: 1.2em; color: #333;">🌟 ప్రతి రోజు కొత్త అవకాశం</p>
-                <p style="font-size: 1.2em; color: #333;">❤️ మీ మానసిక ఆరోగ్యం ముఖ్యం</p>
+                <p style="font-size: 1.2em; color: #1a1a1a;">💪 You are not alone</p>
+                <p style="font-size: 1.2em; color: #1a1a1a;">🌟 Every day is a new opportunity</p>
+                <p style="font-size: 1.2em; color: #1a1a1a;">❤️ Your mental health matters</p>
             </div>
         </div>
 
         <div class="content-section">
-            <h2>📞 హెల్ప్‌లైన్ నంబర్లు</h2>
+            <h2>📞 Helpline Numbers</h2>
             <div style="font-size: 1.1em; line-height: 2;">
-                <p><strong>🇮🇳 నేషనల్ మెంటల్ హెల్త్ హెల్ప్‌లైన్:</strong> 1800-599-0019</p>
-                <p><strong>📱 వాండ్రర్స్ హెల్ప్‌లైన్:</strong> +91-9999666555</p>
-                <p><strong>💚 iCall సైకోసోషల్ హెల్ప్‌లైన్:</strong> 9152987821</p>
+                <p><strong>🇮🇳 National Mental Health Helpline:</strong> 1800-599-0019</p>
+                <p><strong>📱 Vandrevala Foundation Helpline:</strong> +91-9999666555</p>
+                <p><strong>💚 iCall Psychosocial Helpline:</strong> 9152987821</p>
                 <p><strong>🆘 AASRA:</strong> +91-9820466726</p>
-                <p style="margin-top: 20px; color: #d32f2f; font-weight: bold;">
-                    ⚠️ ఎమర్జెన్సీ: 112 (అన్ని రాష్ట్రాల్లో)
+                <p style="margin-top: 20px; color: #ffc107; font-weight: bold;">
+                    ⚠️ Emergency: 112 (All States)
                 </p>
             </div>
         </div>
 
         <div style="text-align: center; margin: 50px 0;">
-            <a href="#" class="cta-button">🧘 ఇప్పుడే ప్రారంభించండి</a>
-            <a href="#" class="cta-button">📚 మరింత తెలుసుకోండి</a>
+            <a href="#" class="cta-button">🧘 Start Now</a>
+            <a href="#" class="cta-button">📚 Learn More</a>
         </div>
     </div>
 
     <footer>
         <div class="container">
-            <h3 style="margin-bottom: 15px;">OTTHUDU THEESKOVADDHU</h3>
-            <p style="font-size: 1.1em;">మీ మానసిక ఆరోగ్యం, మా ప్రాధాన్యత</p>
+            <h3 style="margin-bottom: 15px;">DON'T STRESS OUT</h3>
+            <p style="font-size: 1.1em;">Your Mental Health, Our Priority</p>
             <p style="margin-top: 20px; opacity: 0.9;">
-                ప్రతి రోజు ఒక చిన్న అడుగు వేయండి. మార్పు తప్పకుండా వస్తుంది! 🌟
+                Take one small step every day. Change will definitely come! 🌟
             </p>
             <p style="margin-top: 30px; font-size: 0.9em;">
-                © 2025 OTTHUDU THEESKOVADDHU. All rights reserved.
+                © 2025 DON'T STRESS OUT. All rights reserved.
             </p>
         </div>
     </footer>
